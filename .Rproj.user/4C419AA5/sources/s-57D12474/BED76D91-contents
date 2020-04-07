@@ -232,11 +232,16 @@ library(jsonlite) # 不少同學這行會有Error，還記得如何排除嗎？
 toJSON(commit)
 ```
 
-## 3.7
-```{r}
 
+## 3.7
+
+```{r}
+save(commit,listExample,`小明108學年課表C`, file="today.Rda")
 ```
 
+```{r}
+load("today.Rda")
+```
 
 
 
