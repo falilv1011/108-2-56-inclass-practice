@@ -233,7 +233,7 @@ toJSON(commit)
 ```
 
 
-## 3.7
+## 3.7物件儲存
 
 ```{r}
 save(commit,listExample,`小明108學年課表C`, file="today.Rda")
