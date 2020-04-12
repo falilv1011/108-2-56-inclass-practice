@@ -370,6 +370,7 @@ print(`小明108學年課表A`)
   list("108-2","食在拉丁美洲")
 )
 print(`小明108學年課表B`)
+str(`小明108學年課表B`)
 ```
 
 ```{r}
@@ -510,7 +511,7 @@ tainanSportsMap[[1076]]
 
 ```{r}
 #有多少名字可選:
-names(listExample)
+names(listExample)   #此例會跑出student和學期
 ```
 
 ```{r}
