@@ -122,6 +122,21 @@ homework_sheet <- sheets_read(ss,sheet=1)
 ```
 
 
+Logical
+邏輯：
+為「真」： T或TRUE (要全大寫)。
+為「否」： F或FALSE (要全大寫)。
+```{r}
+logi1 <- c(T,TRUE,F,FALSE,FALSE)
+```
+
+邏輯值遇到數學運算時T會被當成1，而F會被當成0
+```{r}
+# 加總向量內的所有元素值。
+sum(logi1)
+```
+
+
 typeof()
 顯示atomic vector元素的基本認定型態，它代表電腦記憶體在儲存時真正看待的型態。
 ```{r}
