@@ -822,7 +822,7 @@ list1$a
 ```{r}
 today <- list(
   list("台北市",
-       highest_temp=c(highest_temp = 25),
+       highest_temp=c(highest_temp = 25), #atomic vector也可以命名
        lowest_temp=c(lowest_temp = 18)),
   list("新北市",
        highest_temp=c(highest_temp = 24),
