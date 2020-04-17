@@ -768,27 +768,83 @@ names[econOnly][c(T,T,F)]
 選出names中為“經濟學系”且“F”的姓名。
 
 
+
 在前面討論使用[[ ]]（同$）及[ ]取一個元素時我們創造了get1與get2兩個物件，請分別由get1, get2取出108-1學期個體經濟學教師姓名。
 ```{r}
-get1 <- listExample[["學期"]]
-get2 <- listExample["學期"]
+get1 <- listExample[["學期"]] #拿出來
+get2 <- listExample["學期"] #只留下
 
-str(get1)
-str(get2)
 names(get1)
 names(get2)
 ```
 
 ```{r}
+str(get1)
+```
+
+```{r}
+str(get2)
+```
+
+練習答案:
+自己寫:
+```{r}
 get1$`108-1`[[1]][[2]]
 get2$`學期`[[1]][[1]][[2]]
 ```
+老師寫:
+```{r}
+listExample[["學期"]]$`108-1`[[1]]$teacher
+listExample["學期"][[1]][["108-1"]][[1]]$teacher
+```
 
 
+```{r}
+get1 <- listExample[["學期"]] #拿出來
+get2 <- listExample["學期"] #只留下
+```
 
 
+## list應用
+```{r}
+vector1 <- c(a=1,b=3,c=4)
+vector1[["a"]]
+vector1[c("a","c")]
+list1$a #不能用
+
+list1 <- list(a=1,b=3,c=4)
+list1[["a"]]
+list1[c("a","c")]
+list1$a
+```
 
 
+```{r}
+today <- list(
+  list("台北市",
+       highest_temp=c(highest_temp = 25),
+       lowest_temp=c(lowest_temp = 18)),
+  list("新北市",
+       highest_temp=c(highest_temp = 24),
+       lowest_temp=c(lowest_temp = 15)))
+
+str(today)
+```
+```{r}
+today[[1]]$highest_temp  #為何繼續保留vector裡的highest_temp?因為選取並執行後會顯示highest_temp和25
+```
+
+
+```{r}
+tomorrow <- list(
+  list("台北市", c(highest_temp = 25),c(lowest_temp = 18)),
+  list("新北市",c(highest_temp = 24),c(lowest_temp = 15)))
+  
+
+weather <- list(today,tomorrow)
+
+print(weather)
+```
 
 
 
