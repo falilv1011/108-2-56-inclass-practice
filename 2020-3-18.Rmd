@@ -2055,6 +2055,21 @@ lubridate::ymd(twDate_reformat)
 
 
 康熙元年是西元1662年，請將“康熙23年5月6日”轉成date class。（假設月日已是西曆月日）
+練習答案:
+```{r}
+library(stringr)
+date <- "康熙23年5月6日"
+regex_patternn <- "(?<=康熙)[0-9]+(?=年)"
+year <- stringr::str_extract(date, regex_patternn)
+westernYearr <- as.integer(year)+1661
+str_replace(date,
+            regex_patternn,
+            as.character(westernYearr)) ->date_reformat
+print(date_reformat)
+
+lubridate::ymd(date_reformat) -> date
+class(date)
+```
 
 
 
