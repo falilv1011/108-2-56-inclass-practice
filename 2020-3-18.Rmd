@@ -1479,7 +1479,7 @@ levels(list_victimAges_female$`年齡層`) <- levels_new
 
 情境:
 ```{r}
-sum(list_victimAges_female$`數目`, na.rm=T)
+sum(list_victimAges_female$`數目`, na.rm=T)  #將na以外的值加總起來
 sum(list_victimAges_female$`數目`[pick_above30], na.rm = T)
 ```
 
@@ -2431,13 +2431,13 @@ covid19$`地區`
 ```{r}
 levels(covid19$`年齡層`)
 
-# 創造10歲間距的所有可能
-start <- seq(5, 55, by=10) # 由5到55，每個值差10的數值向量
+# 創造10歲間距的所有可能   # 序列（Sequences）
+start <- seq(5, 55, by=10) # 由5到55，每個值差10的數值向量  # seq 的步長可以使用 by 參數指定
 end <- seq(14, 64, by=10)
 middleLevels <- 
   rep(
     paste0(start,"-",end), 
-    each=2) # 每個新間距要2個
+    each=2) # 每個新間距要2個  # rep( [ 指定的向量], [使之重複的次數])
 newLevels <- c("4", middleLevels, "65+", "65+")
 
 levels(covid19$`年齡層`) <- newLevels
