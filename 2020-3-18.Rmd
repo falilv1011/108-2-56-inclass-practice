@@ -3160,7 +3160,11 @@ print(q_d)
 
 練習答案:
 ```{r}
-
+supply_return<-
+  function(p){
+    q_s <- qs=0+2*p
+    return(q_s)
+  }
 ```
 
 
@@ -3240,7 +3244,13 @@ what_time_it_is("Europe/Paris")
 它會依照你電腦目前時間, 即輸入`now()`得到的時間，去告訴你現在巴黎幾點。
 練習答案:
 ```{r}
+what_time_it_is<-
+  function(timezone){
+    nowtime <- with_tz(now(), tz=timezone)
+    return(nowtime)
+  }
 
+what_time_it_is("Europe/Paris")
 ```
 
 
